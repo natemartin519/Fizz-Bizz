@@ -2,7 +2,7 @@
 
 use App\FizzBizz;
 
-include_once('app\FizzBizz.php');
+include_once('app/FizzBizz.php');
 
 class FizzBizzTest extends \PHPUnit_Framework_TestCase
 {
@@ -13,10 +13,10 @@ class FizzBizzTest extends \PHPUnit_Framework_TestCase
         $inputTwo = 6;
 
         $resultOne = FizzBizz::EvaluateFizzBizz($inputOne);
-        $resultTwo = FizzBizz::EvaluateFizzBizz($inputTwo) == 'Fizz';
+        $resultTwo = FizzBizz::EvaluateFizzBizz($inputTwo);
 
-        $this->assertTrue($resultOne == 'Fizz');
-        $this->assertTrue($resultTwo == 'Fizz');
+        $this->assertEquals('Fizz', $resultOne);
+        $this->assertEquals('Fizz', $resultTwo);
     }
 
     public function testMultipleOfFizeShouldReturnBizz()
@@ -27,8 +27,8 @@ class FizzBizzTest extends \PHPUnit_Framework_TestCase
         $resultOne = FizzBizz::EvaluateFizzBizz($inputOne);
         $resultTwo = FizzBizz::EvaluateFizzBizz($inputTwo);
 
-        $this->assertTrue($resultOne == 'Bizz');
-        $this->assertTrue($resultTwo == 'Bizz');
+        $this->assertEquals('Bizz', $resultOne);
+        $this->assertEquals('Bizz', $resultTwo);
     }
 
     public function testMultipleOfThreeAndFiveShouldReturnFizzBizz()
@@ -39,8 +39,8 @@ class FizzBizzTest extends \PHPUnit_Framework_TestCase
         $resultOne = FizzBizz::EvaluateFizzBizz($inputOne);
         $resultTwo = FizzBizz::EvaluateFizzBizz($inputTwo);
 
-        $this->assertTrue($resultOne == 'FizzBizz');
-        $this->assertTrue($resultTwo == 'FizzBizz');
+        $this->assertEquals('FizzBizz', $resultOne);
+        $this->assertEquals('FizzBizz', $resultTwo);
     }
 
     public function testShouldReturnInputedNumberOfNonFizzBizzNumber()
@@ -49,6 +49,6 @@ class FizzBizzTest extends \PHPUnit_Framework_TestCase
 
         $resultOne = FizzBizz::EvaluateFizzBizz($inputOne);
 
-        $this->assertTrue($resultOne == $inputOne);
+        $this->assertEquals($resultOne, $inputOne);
     }
 }

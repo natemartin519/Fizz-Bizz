@@ -4,7 +4,7 @@ class FizzBizz
 {
     public static function EvaluateFizzBizz($inputValue)
     {
-        if ($inputValue % 15 == 0) {
+        if ($inputValue % 3 == 0 && $inputValue % 5 == 0) {
             return 'FizzBizz';
         } elseif ($inputValue % 3 == 0) {
             return 'Fizz';
