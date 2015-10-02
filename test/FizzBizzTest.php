@@ -2,9 +2,7 @@
 
 use App\FizzBizz;
 
-include_once('app/FizzBizz.php');
-
-class FizzBizzTest extends \PHPUnit_Framework_TestCase
+class FizzBizzTest extends PHPUnit_Framework_TestCase
 {
 
     public function testMultipleOfThreeShouldReturnFizz()
